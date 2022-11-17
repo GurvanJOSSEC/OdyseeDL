@@ -23,6 +23,9 @@ Run the script
 
 The script will prompt you for the URL of your Odysee video you can paste it here, then it will prompt you for the desired file name
 
+
+# Example
+
 Odysee URL ?
 
 https://odysee.com/@Mokso:2/metal-t-rex-model-kit-shorts:2
