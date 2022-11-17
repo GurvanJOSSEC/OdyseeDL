@@ -1,0 +1,24 @@
+#/bin/bash
+#This bash script will download a video from Odysee and convert it to MP3
+
+echo "Odysee URL ?"
+read url
+
+echo "File name ?"
+read filename
+
+wget -O Odysee.tmp $url
+
+wget -c -O Odysee.mp4 "$(grep -o https.*.mp4 Odysee.tmp)"
+
+echo "Download done"
+
+rm Odysee.tmp
+
+echo "Conversion begin"
+
+ffmpeg -i Odysee.mp4  -f mp3 -ab 192000 -vn $filename
+
+rm Odysee.mp4
+
+echo "Conversion done"
