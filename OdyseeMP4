@@ -1,0 +1,18 @@
+#/bin/bash
+#This Bash Script allows you to download a video from Odysee by just pasting the Odysee URL and giving the file a name
+
+echo "Odysee URL ?"
+read url
+
+echo "File name ?"
+read filename
+
+wget -O Odysee.tmp $url
+
+echo $url
+
+wget -c -O $filename "$(grep -o https.*.mp4 Odysee.tmp)"
+
+rm Odysee.tmp
+
+echo "Download done"
